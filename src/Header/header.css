@@ -1,0 +1,39 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    width: 100vw;
+}
+
+.header-content {
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-self: center;
+    margin: auto;
+}
+
+.header-content > h4 {
+    margin: 10px 0px 10px 0px;
+    font-size: 48px;
+    text-align: center;
+}
+
+.modal-container {
+    margin: 10px;
+}
+
+.header-menu-container {
+    position: fixed;
+    border-radius: 5px;
+    margin: 10px;
+    height: 50vh;
+    min-width: 15%;
+    opacity: 0;
+    transition: ease-in-out 500ms;
+}
+
+.header-menu-container.active {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.758);
+}

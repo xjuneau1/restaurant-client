@@ -1,0 +1,49 @@
+.reservation-container{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 5px;
+    overflow: visible;
+    
+}
+
+.reservation-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+}
+.reservation-button {
+    border: none;
+    border-radius: 5px;
+    background: none;
+    padding: 10px;
+    transition: 800ms;
+}
+.reservation-button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+.card-info-container {
+    align-self: center;
+    
+}
+.card-info-container.active {
+    border: 1px solid blue;
+    background-color: white;
+    width: 90vw;
+    height: fit-content;
+    padding: 10px;
+    z-index: 1;
+    top: 100px;
+    position: fixed;
+}
+
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70vh;
+    
+}

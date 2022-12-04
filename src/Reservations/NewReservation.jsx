@@ -25,8 +25,9 @@ function NewReservation({ setCreate }) {
         .then(setError(null));
     } catch (err) {
       setError(err);
+      return () => abortController.abort();
     }
-    return () => abortController.abort();
+    
   };
 
   const leavePage = () => {

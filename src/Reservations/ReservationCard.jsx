@@ -23,12 +23,7 @@ function ReservationCard({ reservation, setError, error }) {
     }
   };
   const handleSetCard = () => {
-    if (cardInfo === true) {
-      setCardInfo(false);
-    }
-    if (cardInfo === false) {
-      setCardInfo(true);
-    }
+    cardInfo === false ? setCardInfo(true): setCardInfo(false)
   };
   const handleShowCard = () => {
     handleSetCard();
@@ -113,7 +108,7 @@ function ReservationCard({ reservation, setError, error }) {
           </div>
         </button>
       ) : (
-        <div className="reservation-cancelled-finish">
+        <div className={reservation.status === "finished" ? "reservation-finish": "reservation-cancelled"}>
           <div className="reservation-info">
             <div className="reservation-data">
               id:{reservation.reservation_id}

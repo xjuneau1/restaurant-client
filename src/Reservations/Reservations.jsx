@@ -17,6 +17,7 @@ function Reservations() {
         setError(null);
       } catch (err) {
         setError(err);
+        return () => abortController.abort();
       }
     }
     loadReservations();
@@ -25,15 +26,10 @@ function Reservations() {
         (res) => res.status === "cancelled" || res.status === "finished"
       )
     );
-    return () => abortController.abort();
   }, [reservations]);
 
   const showCreate = () => {
-    if (create === false) {
-      setCreate(true);
-    } else {
-      setCreate(false);
-    }
+    create === false ? setCreate(true) : setCreate(false);
   };
   if (reservations.length) {
     return (
@@ -42,21 +38,25 @@ function Reservations() {
           <button onClick={showCreate}>Create New Reservation</button>
         </div>
         {create ? <NewReservation setCreate={setCreate} /> : <></>}
-        {reservations.map((reservation, index) => {
-          if (reservation.status === "booked") {
-            return (
-              <div key={reservation.reservation_id}>
-                <ReservationCard
-                  key={reservation.reservation_id}
-                  reservation={reservation}
-                  setError={setError}
-                  error={error}
-                  index={reservation.reservation_id}
-                />
-              </div>
-            );
-          }
-        })}
+        {reservations
+          .sort((a, b) =>
+            Number(a.reservation_id) > Number(b.reservation_id) ? 1 : -1
+          )
+          .map((reservation, index) => {
+            if (reservation.status === "booked") {
+              return (
+                <div key={reservation.reservation_id}>
+                  <ReservationCard
+                    key={reservation.reservation_id}
+                    reservation={reservation}
+                    setError={setError}
+                    error={error}
+                    index={reservation.reservation_id}
+                  />
+                </div>
+              );
+            }
+          })}
         {cancelledFinished.map((reservation) => {
           return (
             <ReservationCard

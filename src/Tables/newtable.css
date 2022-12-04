@@ -1,0 +1,12 @@
+.new-table-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    position: fixed;
+    top:100px;
+    width: 90vw;
+    height: 40vh;
+}

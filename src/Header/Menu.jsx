@@ -10,6 +10,7 @@ function Menu({setMenu}) {
     <div className='menu-container'>
         <Link onClick={handleHideMenu} to="/dashboard">Dashboard</Link>
         <Link onClick={handleHideMenu} to="/reservations">Reservations</Link>
+        <Link onClick={handleHideMenu} to="/tables">Tables</Link>
     </div> 
     );
 }

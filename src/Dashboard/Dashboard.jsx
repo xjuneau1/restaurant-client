@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReservationsList from "../Reservations/ReservationsList";
 import { listReservations, listTables } from "../utils/api";
@@ -6,7 +6,6 @@ import { previous, next, today } from "../utils/date-time";
 import "./dashboard.css";
 function Dashboard({ date }) {
   const [reservations, setReservations] = useState({});
-  const [tables, setTables] = useState([]);
   const [error, setError] = useState(null);
   const { search } = useLocation();
   const navigate = useNavigate();

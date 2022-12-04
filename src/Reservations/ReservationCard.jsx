@@ -75,7 +75,7 @@ function ReservationCard({ reservation, setError, error }) {
   };
   return (
     <div className="reservation-container">
-      {reservation.status === "booked" ? (
+      {reservation.status === "booked" || reservation.status === "seated"  ? (
         <button className="reservation-button" onClick={handleShowCard}>
           <div className="reservation-info">
             <div className="reservation-data">

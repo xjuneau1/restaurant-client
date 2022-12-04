@@ -30,7 +30,7 @@ function Tables() {
         {error ? <div>{error.message}</div>: <div className="tables-error"></div>}
         {create ? <NewTable showCreate={showCreate} /> : <></>}
         <button onClick={showCreate}>Create New Table</button>
-        {tables.map((table) => (
+        {tables.sort((a,b)=> a.table_name > b.table_name ? 1:-1).map((table) => (
           <TableCard key={table.table_id} table={table} setError={setError} />
         ))}
       </div>

@@ -43,7 +43,7 @@ function Reservations() {
             Number(a.reservation_id) > Number(b.reservation_id) ? 1 : -1
           )
           .map((reservation, index) => {
-            if (reservation.status === "booked") {
+            if (reservation.status === "booked" || reservation.status === "seated") {
               return (
                 <div key={reservation.reservation_id}>
                   <ReservationCard

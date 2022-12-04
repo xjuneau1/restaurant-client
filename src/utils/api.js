@@ -81,6 +81,15 @@ export async function updateTable(table, table_id, signal){
   }
   return await fetchJson(url, options, table)
 }
+export async function deleteTable(table_id, signal){
+  const url = `${API_BASE_URL}/tables/${table_id}`
+  const options = {
+    method: "DELETE",
+    headers,
+    signal
+  }
+  return await fetchJson(url, options)
+}
 export async function createTable(table, signal) {
   const url = `${API_BASE_URL}/tables`
   const options = {
@@ -109,7 +118,7 @@ export async function updateReservationStatus(status, reservation_id, signal) {
   const options = {
     method: "PUT",
     headers,
-    body: JSON.stringify({ data: { status } }),
+    body: JSON.stringify({ data: { status: status } }),
     signal,
   };
   return await fetchJson(url, options);

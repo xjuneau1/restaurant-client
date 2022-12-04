@@ -1,15 +1,22 @@
 .table-card-container {
     display: flex;
     align-items: center;
-    width: 90vw;
+    width: 90%;
+    margin-right: 5px;
     border: none;
     background: none;
-    margin-top: 10px;
     transition: 800ms;
 }
 .table-card-container:hover {
     cursor: pointer;
     background-color: grey;
+}
+
+.table-card {
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    margin: 10px;
 }
 
 .table-card-content {
@@ -18,10 +25,12 @@
     width: 100%;
     justify-content: center;
     padding: 5px;
+    
 }
 
 .table-card-data {
     padding: 5px;
+    width: 20%;
 }
 
 .edit-table-container {
@@ -29,7 +38,6 @@
     flex-direction: column;
     border: 1px solid black;
     background-color: white;
-    align-items: center;
     width: 90vw;
     position: fixed;
     top:100px;
@@ -39,4 +47,15 @@
 .edit-table-container > button {
     margin: 10px;
     width: fit-content;
+}
+.edit-table-forms {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+.edit-table-form {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
 }

@@ -5,8 +5,41 @@
     align-items: center;
     background-color: white;
     border: 1px solid black;
+    border-radius: 3px;
     position: fixed;
-    top:100px;
-    width: 90vw;
+    top:120px;
+    width: 98%;
     height: 40vh;
+}
+.new-table-header {
+    display: flex;
+    align-items: center;
+    background-color: rgb(78, 157, 200);
+    width: 100%;
+    height: 10%;
+}
+
+.new-table-header > h5 {
+    margin: 5px 5px 5px 5px;
+    width: 60%;
+}
+.new-table-buttons {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+.new-table-close-button {
+    margin:5px 5px 5px auto;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    background-color: red;
+    transition: 800ms;
+}
+
+.new-table-close-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(200, 0, 0);
 }

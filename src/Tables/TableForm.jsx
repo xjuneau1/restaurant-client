@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./tableform.css"
-function TableForm({handleChange, changeNumber, tableData}) {
+function TableForm({handleChange, changeNumber, tableData, edit}) {
   return (
     <form className="table-form">
         <div className="table-form-input-container">
@@ -28,6 +28,7 @@ function TableForm({handleChange, changeNumber, tableData}) {
             required
           />
       </div>
+      {edit ? <></>:<button className="table-form-submit-button" type="submit">Submit</button>}
     </form>
   );
 }

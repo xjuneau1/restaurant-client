@@ -1,6 +1,7 @@
 .table-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 20px 0px 20px 0px;
     width: 100%;
     height: 100%;
@@ -14,6 +15,7 @@
     padding: 5px;
     border: 1px solid black;
     border-radius: 3px;
+    width: fit-content;
 }
 .table-form-input-icon {
     border-right: 1px solid black;
@@ -22,4 +24,18 @@
 .table-form-input {
     margin-left: 5px;
     border: none;
+}
+
+.table-form-submit-button {
+    margin: 40px auto 10px auto;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 3px;
+    background: none;
+    transition: 800ms;
+}
+.table-form-submit-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(90, 200, 80);
 }

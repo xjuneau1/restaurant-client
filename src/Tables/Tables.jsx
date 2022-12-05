@@ -29,10 +29,12 @@ function Tables() {
       <div className="tables-container">
         {error ? <div>{error.message}</div>: <div className="tables-error"></div>}
         {create ? <NewTable showCreate={showCreate} /> : <></>}
-        <button onClick={showCreate}>Create New Table</button>
+        <button className="create-table-button" onClick={showCreate}>Create New Table</button>
+        <div className="table-cards-container">
         {tables.sort((a,b)=> a.table_name > b.table_name ? 1:-1).map((table) => (
           <TableCard key={table.table_id} table={table} setError={setError} />
         ))}
+        </div>
       </div>
     );
   }

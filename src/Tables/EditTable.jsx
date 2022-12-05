@@ -3,7 +3,7 @@ import TableForm from "./TableForm";
 import "./edittable.css"
 function EditTable({ tableData, setTableData}) {
   
-
+  const edit = true
   const changeHandler = ({ target }) => {
     setTableData({ ...tableData, [target.name]: target.value });
   };
@@ -17,6 +17,7 @@ function EditTable({ tableData, setTableData}) {
         tableData={tableData}
         handleChange={changeHandler}
         changeNumber={changeNumber}
+        edit={edit}
       />
     </div>
   );

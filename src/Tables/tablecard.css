@@ -1,9 +1,10 @@
 .table-card-container {
     display: flex;
     align-items: center;
-    width: 90%;
-    margin-right: 5px;
-    border: none;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.176);
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 5px black;
     background: none;
     transition: 800ms;
 }
@@ -15,8 +16,9 @@
 .table-card {
     display: flex;
     flex-direction: row;
-    width: 90vw;
-    margin: 10px;
+    width: 100%;
+    margin: 10px 0px 10px 0px;
+    
 }
 
 .table-card-content {
@@ -36,13 +38,13 @@
 .edit-table-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-self: center;
     border: 1px solid black;
     border-radius: 3px;
     background-color: white;
-    width: 95vw;
+    width: 90%;
     position: fixed;
-    top:100px;
+    top: 100px;
     height: 70vh;
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { finishTableReservation, updateReservationStatus } from "../utils/api";
 
-function FinishTableButton({ table, setError, error, reservation }) {
+function FinishTableButton({ table, setError, error, reservation, setReservation }) {
   const handleFinishTable = async () => {
     const abortController = new AbortController();
     try {
@@ -16,6 +16,7 @@ function FinishTableButton({ table, setError, error, reservation }) {
           abortController.signal
         );
         await finishTableReservation(table.table_id, abortController.signal);
+        setReservation({})
       }
     } catch (err) {
       setError(err);

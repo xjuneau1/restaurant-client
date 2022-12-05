@@ -66,7 +66,7 @@ function TableCard({ table }) {
           
         </div>
       </button>
-      {table.table_status === "occupied" ? <FinishTableButton table={table} setError={setError} error={error} reservation={reservation}/>: <></>}
+      {table.table_status === "occupied" ? <FinishTableButton table={table} setError={setError} error={error} reservation={reservation} setReservation={setReservation}/>: <></>}
       </div>
 
       {tableInfo ? (

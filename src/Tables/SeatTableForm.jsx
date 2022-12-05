@@ -26,7 +26,6 @@ function SeatTableForm({
             </option>
           ) : (
             <option
-              style={{ textDecoration: "line-through" }}
               disabled
               key={res.reservation_id}
             >

@@ -1,0 +1,39 @@
+.seat-table-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.seat-table-form > button {
+    margin: 10px auto 10px auto;
+}
+
+.seat-table-form-title {
+    font-size: 14px;
+    padding: 0px 10px 0px 5px;
+    align-self: center;
+}
+
+.seat-table-form-select {
+    border: 1px solid rgb(78, 157, 200);
+    border-radius: 3px;
+    margin: 10px auto 10px auto;
+    padding: 5px;
+}
+
+.seat-table-form-option {
+    padding: 10px;
+}
+
+.seat-table-form-button {
+    padding: 8px;
+    border:none;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    transition: 800ms;
+}
+.seat-table-form-button:hover {
+    cursor: pointer;
+    background-color: rgb(100, 100, 100);
+}

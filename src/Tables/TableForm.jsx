@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./tableform.css"
-function TableForm({handleChange, handleSubmit, changeNumber, tableData}) {
+function TableForm({handleChange, changeNumber, tableData}) {
   return (
-    <form className="table-form" onSubmit={handleSubmit}>
-        <div className="">
-          <div className="">Table Name</div>
+    <form className="table-form">
+        <div className="table-form-input-container">
+          <div className="table-form-input-icon">Table</div>
           <input
             className="table-form-input"
             onChange={handleChange}
@@ -16,8 +16,8 @@ function TableForm({handleChange, handleSubmit, changeNumber, tableData}) {
           />
         </div>
 
-        <div className="">
-          <div className="">Capacity</div>
+        <div className="table-form-input-container">
+          <div className="table-form-input-icon">Capacity</div>
           <input
             className="table-form-input"
             onChange={changeNumber}
@@ -27,7 +27,6 @@ function TableForm({handleChange, handleSubmit, changeNumber, tableData}) {
             name="capacity"
             required
           />
-        <button type="submit">Submit</button>
       </div>
     </form>
   );

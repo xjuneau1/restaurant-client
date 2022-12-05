@@ -1,5 +1,6 @@
 import React from 'react';
 import { deleteTable } from "../utils/api"
+import "./deletetable.css"
 function DeleteTableButton({table, handleSetTable, setError}) {
     const handleDeleteTable = async () => {
         const abortController = new AbortController();
@@ -16,7 +17,7 @@ function DeleteTableButton({table, handleSetTable, setError}) {
           setError(err);
         }
       };
-    return ( <button onClick={handleDeleteTable}>Delete</button> );
+    return ( <button className='delete-button' onClick={handleDeleteTable}>Delete</button> );
 }
 
 export default DeleteTableButton;

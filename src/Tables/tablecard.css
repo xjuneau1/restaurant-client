@@ -36,26 +36,86 @@
 .edit-table-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 1px solid black;
+    border-radius: 3px;
     background-color: white;
-    width: 90vw;
+    width: 95vw;
     position: fixed;
     top:100px;
-    height: 40vh;
+    height: 70vh;
 }
 
-.edit-table-container > button {
-    margin: 10px;
-    width: fit-content;
-}
-.edit-table-forms {
+.edit-table-form{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 50%;
 }
-.edit-table-form {
+
+.edit-table-header {
+    width: 100%;
+    height: 12%;
+    padding-top: 5px;
+    border-bottom: 1px solid black;
+    background-color: rgb(78, 157, 200);
+}
+.edit-table-header > h5 {
+    margin: 0;
+    height: 50%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.edit-table-buttons {
     display: flex;
-    flex-direction: row;
-    width: 50%;
+    width: 100%;
+    height: 50%;
+}
+.edit-table-button {
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: grey;
+    color: white;
+    padding: 5px;
+    margin: 0px 5px 0px 5px;
+    transition: 800ms;
+}
+.edit-table-button:hover {
+    cursor: pointer;
+    background-color: rgb(100, 100, 100);
+}
+
+.close-button {
+    margin-left: auto;
+}
+
+.edit-table-close-button:hover {
+    cursor: pointer;
+}
+.seat-addtl-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+.submit-form-button-container {
+    display: flex;
+    width: 100%;
+}
+.submit-form-button {
+    padding: 10px;
+    margin: 10px 10px 10px auto;
+    border: none;
+    width: fit-content;
+    align-self: center;
+    border-radius: 5px;
+    background-color: rgb(90, 200, 80);
+    color: white;
+    transition: 800ms;
+    justify-self: flex-end;
+}
+.submit-form-button:hover {
+    cursor: pointer;
+    background-color: rgb(90, 150, 80);
 }

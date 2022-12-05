@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./seattableform.css"
 function SeatTableForm({
   tableData,
   reservations,
@@ -7,17 +7,19 @@ function SeatTableForm({
   submitHandler,
 }) {
   return (
-    <form onSubmit={submitHandler}>
-      <label htmlFor="">Select Reservation:</label>
+    <form className="seat-table-form" onSubmit={submitHandler}>
+      <div className="seat-table-form-title">Select Reservation:</div>
       <select
+      className="seat-table-form-select"
         name="reservation_id"
         id="reservation_id"
         onChange={changeHandler}
       >
-        <option>Name - Capacity - Status</option>
+        <option className="seat-table-form-option">Name - Capacity - Status</option>
         {reservations.map((res) =>
           res.status === "booked" ? (
             <option
+            className="seat-table-form-option"
               key={res.reservation_id}
               value={res.reservation_id}
               required={true}
@@ -27,6 +29,7 @@ function SeatTableForm({
           ) : (
             <option
               disabled
+              className="seat-table-form-option"
               key={res.reservation_id}
             >
               {res.first_name} {res.last_name} - {res.people} - {res.status}
@@ -34,7 +37,7 @@ function SeatTableForm({
           )
         )}
       </select>
-      <button type="submit">Seat Table</button>
+      <button className="seat-table-form-button" type="submit">Seat Table</button>
     </form>
   );
 }

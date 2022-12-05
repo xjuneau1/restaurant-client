@@ -1,8 +1,25 @@
 .table-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 20px 0px 20px 0px;
     width: 100%;
     height: 100%;
+}
+
+.table-form-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.table-form-input-icon {
+    border-right: 1px solid black;
+    padding-right:5px ;
+}
+.table-form-input {
+    margin-left: 5px;
+    border: none;
 }

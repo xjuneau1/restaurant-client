@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { listReservations, updateSeat } from "../utils/api";
 import SeatTableForm from "./SeatTableForm";
-
+import "./seattable.css";
 function SeatTable({ table, handleSetTable }) {
   const initTableData = {
     table_id: table.table_id,
@@ -18,8 +18,7 @@ function SeatTable({ table, handleSetTable }) {
     async function fetchReservations() {
       const abortController = new AbortController();
       try {
-        setReservations(await listReservations(abortController.signal))
-        
+        setReservations(await listReservations(abortController.signal));
       } catch (err) {
         setError(err);
         return () => abortController.abort();
@@ -51,8 +50,9 @@ function SeatTable({ table, handleSetTable }) {
     console.log(tableData);
   };
   return (
-    <div>
-      {error ? <div>{error.message}</div>: <></>}
+    <div className="seat-table-container">
+      {error ? <div className="error-message">{error.message}</div> : <></>}
+      <h5 className="seat-table-container-header">Seat Table:</h5>
       <SeatTableForm
         reservations={reservations}
         tableData={tableData}

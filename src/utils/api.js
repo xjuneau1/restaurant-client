@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.VITE_API_BASE_URL || "http://192.168.1.199:80"
+const API_BASE_URL = process.meta.env.VITE_API_BASE_URL || "http://192.168.1.199:80"
 // "http://localhost:5001"
 const headers = new Headers();
 headers.append("Content-Type", "application/json");

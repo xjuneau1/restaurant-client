@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5001" 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5001" 
 const headers = new Headers();
 headers.append("Content-Type", "application/json");
 
@@ -28,7 +28,7 @@ async function fetchJson(url, options, onCancel) {
 }
 
 export async function listReservations(params, signal) {
-  const url = new URL(`${API_BASE_URL}/reservations`);
+  const url = new URL(`${BASE_URL}/reservations`);
   Object.entries(params).forEach(([key, value]) =>
     url.searchParams.append(key, value.toString())
   );
@@ -36,12 +36,12 @@ export async function listReservations(params, signal) {
 }
 
 export async function getReservation(reservation_id, signal){
-  const url = `${API_BASE_URL}/reservations/${reservation_id}`
+  const url = `${BASE_URL}/reservations/${reservation_id}`
   return await fetchJson(url, { headers, signal }, [])
 }
 
 export async function createReservation(reservation, signal) {
-  const url = `${API_BASE_URL}/reservations`
+  const url = `${BASE_URL}/reservations`
   const options = {
     method: "POST",
     headers,
@@ -52,7 +52,7 @@ export async function createReservation(reservation, signal) {
 }
 
 export async function updateReservation(reservation, reservation_id, signal) {
-  const url = `${API_BASE_URL}/reservations/${reservation_id}`
+  const url = `${BASE_URL}/reservations/${reservation_id}`
   const options = {
     method: "PUT",
     headers,
@@ -63,15 +63,15 @@ export async function updateReservation(reservation, reservation_id, signal) {
 }
 
 export async function listTables(signal) {
-  const url = `${API_BASE_URL}/tables`
+  const url = `${BASE_URL}/tables`
   return await fetchJson(url, { headers, signal }, [])
 }
 export async function getTable(table_id, signal){
-const url = `${API_BASE_URL}/tables/${table_id}`
+const url = `${BASE_URL}/tables/${table_id}`
 return await fetchJson(url, {headers, signal}, {})
 }
 export async function updateTable(table, table_id, signal){
-  const url = `${API_BASE_URL}/tables/${table_id}`
+  const url = `${BASE_URL}/tables/${table_id}`
   const options = {
     method: "PUT",
     headers,
@@ -81,7 +81,7 @@ export async function updateTable(table, table_id, signal){
   return await fetchJson(url, options, table)
 }
 export async function deleteTable(table_id, signal){
-  const url = `${API_BASE_URL}/tables/${table_id}`
+  const url = `${BASE_URL}/tables/${table_id}`
   const options = {
     method: "DELETE",
     headers,
@@ -90,7 +90,7 @@ export async function deleteTable(table_id, signal){
   return await fetchJson(url, options)
 }
 export async function createTable(table, signal) {
-  const url = `${API_BASE_URL}/tables`
+  const url = `${BASE_URL}/tables`
   const options = {
     method: "POST",
     headers,
@@ -102,7 +102,7 @@ export async function createTable(table, signal) {
 
 
 export async function updateSeat(reservation_id, table_id, signal) {
-  const url = `${API_BASE_URL}/tables/${table_id}/seat`;
+  const url = `${BASE_URL}/tables/${table_id}/seat`;
   const options = {
     method: "PUT",
     body: JSON.stringify({ data: { reservation_id } }),
@@ -113,7 +113,7 @@ export async function updateSeat(reservation_id, table_id, signal) {
 }
 
 export async function updateReservationStatus(status, reservation_id, signal) {
-  const url = `${API_BASE_URL}/reservations/${reservation_id}/status`;
+  const url = `${BASE_URL}/reservations/${reservation_id}/status`;
   const options = {
     method: "PUT",
     headers,
@@ -124,7 +124,7 @@ export async function updateReservationStatus(status, reservation_id, signal) {
 }
 
 export async function finishTableReservation(table_id, signal) {
-  const url = `${API_BASE_URL}/tables/${table_id}/seat`;
+  const url = `${BASE_URL}/tables/${table_id}/seat`;
   const options = {
     method: "DELETE",
     headers,

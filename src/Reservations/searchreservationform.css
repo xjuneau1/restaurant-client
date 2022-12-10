@@ -1,0 +1,31 @@
+.search-reservation-form-container {
+    display: flex;
+    height: 100%;
+    margin: 10px auto 10px auto;
+}
+
+.search-reservation-form {
+    display: flex;
+}
+
+.search-reservation-form-label {
+    margin-right: 5px;
+    align-self: center;
+}
+
+.search-reservation-form-input {
+    margin-right: 5px;
+}
+
+.search-reservation-form-button {
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    transition: 800ms;
+}
+
+.search-reservation-form-button:hover {
+    cursor: pointer;
+    background-color: grey;
+}

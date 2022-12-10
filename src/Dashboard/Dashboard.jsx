@@ -30,17 +30,17 @@ function Dashboard({ date }) {
       }
     }
 
-    async function loadTables() {
-      try {
-        setTables(await listTables(abortController.signal));
-        setError(null);
-      } catch (err) {
-        setError(err);
-      }
-    }
+    // async function loadTables() {
+    //   try {
+    //     setTables(await listTables(abortController.signal));
+    //     setError(null);
+    //   } catch (err) {
+    //     setError(err);
+    //   }
+    // }
 
     loadReservations();
-    loadTables();
+    // loadTables();
     return () => abortController.abort();
   }
 

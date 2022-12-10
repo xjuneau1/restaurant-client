@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getReservation, getTable, updateTable } from "../utils/api";
-import TableForm from "./TableForm";
 import EditTable from "./EditTable";
 import "./tablecard.css";
 import DeleteTableButton from "./DeleteTableButton";

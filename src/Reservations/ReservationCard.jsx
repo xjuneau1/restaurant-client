@@ -16,14 +16,13 @@ function ReservationCard({ reservation, setError, error }) {
       setReservationData(
         await getReservation(reservation.reservation_id, abortController.signal)
       );
-      setError(null);
     } catch (err) {
       setError(err);
-      return () => abortController.abort();
     }
+    return () => abortController.abort();
   };
   const handleSetCard = () => {
-    cardInfo === false ? setCardInfo(true): setCardInfo(false)
+    cardInfo === false ? setCardInfo(true) : setCardInfo(false);
   };
   const handleShowCard = () => {
     handleSetCard();
@@ -75,7 +74,7 @@ function ReservationCard({ reservation, setError, error }) {
   };
   return (
     <div className="reservation-container">
-      {reservation.status === "booked" || reservation.status === "seated"  ? (
+      {reservation.status === "booked" || reservation.status === "seated" ? (
         <button className="reservation-button" onClick={handleShowCard}>
           <div className="reservation-info">
             <div className="reservation-data">
@@ -94,21 +93,18 @@ function ReservationCard({ reservation, setError, error }) {
               className="reservation-status"
               data-reservation-id-status={reservation.reservation_id}
             >
-              Status:{" "}
-              <div
-                className={
-                  reservation.status === "booked"
-                    ? "reservation-status-booked"
-                    : "reservation-status-done"
-                }
-              >
-                {reservation.status}
-              </div>
+              Status: {reservation.status}
             </div>
           </div>
         </button>
       ) : (
-        <div className={reservation.status === "finished" ? "reservation-finish": "reservation-cancelled"}>
+        <div
+          className={
+            reservation.status === "finished"
+              ? "reservation-finish"
+              : "reservation-cancelled"
+          }
+        >
           <div className="reservation-info">
             <div className="reservation-data">
               id:{reservation.reservation_id}
@@ -123,19 +119,10 @@ function ReservationCard({ reservation, setError, error }) {
             </div>
 
             <div
-              className="reservation-status"
+              className="reservation-data"
               data-reservation-id-status={reservation.reservation_id}
             >
-              Status:{" "}
-              <div
-                className={
-                  reservation.status === "booked"
-                    ? "reservation-status-booked"
-                    : "reservation-status-done"
-                }
-              >
-                {reservation.status}
-              </div>
+              Status: {reservation.status}
             </div>
           </div>
         </div>
@@ -155,7 +142,7 @@ function ReservationCard({ reservation, setError, error }) {
               setReservationData={setReservationData}
               setError={setError}
             />
-            <button onClick={handleShowCard}>Close Card</button>
+            <button onClick={handleSetCard}>Close Card</button>
             <div className="">
               <button
                 onClick={handleCancelReservation}

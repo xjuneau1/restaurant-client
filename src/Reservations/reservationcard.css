@@ -1,23 +1,30 @@
 .reservation-container{
     display: flex;
     flex-direction: column;
+    
     height: fit-content;
-    padding: 5px;
+    margin: 5px;
     overflow: visible;
-    width: 90vw;
+    width: 90%;
 }
 
 .reservation-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     height: 50%;
 }
+.reservation-data {
+    margin: 10px auto 10px auto;
+}
 .reservation-button {
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 5px;
-    background: none;
+    box-shadow: inset 2px 2px 5px black;
+    background-color: white;
     padding: 10px;
+    margin: 0px 10px 10px 10px;
     transition: 800ms;
 }
 .reservation-button:hover {
@@ -50,13 +57,11 @@
 
 .reservation-finish {
     background-color: rgba(0, 136, 2, 0.603);
-    width: 100%;
     padding: 5px;
     border-radius: 5px;
 }
 .reservation-cancelled {
     background-color: rgba(136, 0, 0, 0.603);
-    width: 100%;
     padding: 5px;
     border-radius: 5px;
 }

@@ -7,7 +7,9 @@ export default defineConfig({
   server: {
     watch: {
       usePolling: true
-    }
+    },
+    open: true,
+    host: true
   },
   define: { 'process.env.BABEL_TYPES_8_BREAKING': 'false' }
 })

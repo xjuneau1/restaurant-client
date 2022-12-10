@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid black;
+    background-color: rgb(78, 157, 200);
     width: 100vw;
 }
 
@@ -23,17 +24,22 @@
     margin: 10px;
 }
 
+.modal-container > button {
+    position: fixed;
+    top: 20px;
+}
+
 .header-menu-container {
     position: fixed;
     border-radius: 5px;
     margin: 10px;
-    height: 50vh;
-    min-width: 15%;
+    width: 200px;
+    height: 200px;
     opacity: 0;
     transition: ease-in-out 500ms;
 }
 
 .header-menu-container.active {
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0.758);
+    background-color: rgb(25, 25, 25);
 }

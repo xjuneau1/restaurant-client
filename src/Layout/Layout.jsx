@@ -13,7 +13,6 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Navigate to="/dashboard" />} />
         <Route path="/dashboard" element={<Dashboard date={today()}/>} />
-        {/* <Route path="/dashboard/:date" element={<Dashboard date={today()}/>} /> */}
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/tables" element={<Tables />} />
         <Route element={<NotFound />} />

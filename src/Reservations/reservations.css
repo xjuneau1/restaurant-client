@@ -12,3 +12,15 @@
 .create-button-container > button {
     margin: auto
 }
+
+.create-button {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: 800ms;
+}
+
+.create-button:hover{
+    cursor: pointer;
+    background-color: grey;
+}

@@ -14,8 +14,8 @@ function NewTable({ showCreate }) {
     event.preventDefault();
     const abortController = new AbortController();
     try {
-      createTable(tableData, abortController.signal);
-      showCreate();
+      await createTable(tableData, abortController.signal)
+        .then(showCreate())
     } catch (err) {
       setError(err);
       return () => abortController.abort();
@@ -31,14 +31,13 @@ function NewTable({ showCreate }) {
   return (
     <div className="new-table-container">
       <div className="new-table-header">
-      <h5>Create New Table:</h5>
-      <div className="new-table-buttons">
-        <button className="new-table-close-button" onClick={showCreate}>
-          X
-        </button>
+        <h5>Create New Table:</h5>
+        <div className="new-table-buttons">
+          <button className="new-table-close-button" onClick={showCreate}>
+            X
+          </button>
+        </div>
       </div>
-      </div>
-      
       <TableForm
         handleChange={changeHandler}
         handleSubmit={submitHandler}

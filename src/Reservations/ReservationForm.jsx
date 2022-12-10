@@ -3,8 +3,7 @@ import "./reservationform.css";
 function ReservationForm({
   submitHandler,
   reservationData,
-  setReservationData,
-  setError
+  setReservationData
 }) {
   const changeHandler = ({ target }) => {
     setReservationData({ ...reservationData, [target.name]: target.value });

@@ -45,23 +45,19 @@ function Dashboard({ date }) {
   }
 
   useEffect(() => {
-    navigate(`/dashboard?date=${date}`);
     loadDashboard();
-  }, [date, reservations]);
+  }, [date]);
 
   const previousHandler = () => {
     navigate(`/dashboard?date=${previous(date)}`);
-    setTimeout(loadDashboard(), 3000);
   };
 
   const todayHandler = () => {
     navigate(`/dashboard?date=${today()}`);
-    setTimeout(loadDashboard(), 3000);
   };
 
   const nextHandler = () => {
     navigate(`/dashboard?date=${next(date)}`);
-    setTimeout(loadDashboard(), 3000);
   };
 
   return (

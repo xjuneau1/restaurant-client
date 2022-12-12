@@ -21,9 +21,11 @@ function ReservationCard({ reservation, setError, error }) {
     }
     return () => abortController.abort();
   };
+
   const handleSetCard = () => {
     cardInfo === false ? setCardInfo(true) : setCardInfo(false);
   };
+  
   const handleShowCard = () => {
     handleSetCard();
     fetchReservation();

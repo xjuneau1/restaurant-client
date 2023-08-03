@@ -1,0 +1,31 @@
+.guest-reservation-form-container {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    padding: 10px;
+}
+.guest-reservation-form-container > form {
+    width: 100%;
+    height: 100%;
+}
+
+.guest-reservation-form-input-container {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.guest-reservation-form-input {
+    width: 100%;
+    border: none;
+    padding: 5px;
+}
+
+.guest-reservation-form-input-icon {
+    border-right: 1px solid black;
+    padding: 0px 5px 0px 5px;
+    height: 100%;
+}

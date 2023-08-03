@@ -7,3 +7,9 @@
     width: 90vw;
     background-color: white;
 }
+
+.new-reservation-forms-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}

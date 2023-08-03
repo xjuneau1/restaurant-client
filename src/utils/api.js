@@ -32,6 +32,7 @@ export async function listReservations(params, signal) {
   Object.entries(params).forEach(([key, value]) =>
     url.searchParams.append(key, value.toString())
   );
+  
   return await fetchJson(url, { headers, signal }, [])
 }
 
@@ -132,4 +133,32 @@ export async function finishTableReservation(table_id, signal) {
     signal,
   };
   return await fetchJson(url, options);
+}
+
+
+export async function listGuests(signal){
+  const url = `${BASE_URL}/guests`
+  return await fetchJson(url, { signal }, [])
+}
+
+export async function updateGuest(updatedGuest, guest_id, signal){
+  const url = `${BASE_URL}/guests/${guest_id}`
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({ data: updatedGuest }),
+    signal
+  };
+  return await fetchJson(url, options);
+}
+
+export async function createGuest(guest, signal){
+  const url = `${BASE_URL}/guests`
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify({data: guest}),
+    signal
+  }
+  return await fetchJson(url, options, guest)
 }

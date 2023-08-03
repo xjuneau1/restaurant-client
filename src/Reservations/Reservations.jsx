@@ -31,7 +31,7 @@ function Reservations() {
     }
     loadReservations();
     listAllGuests();
-  }, [reservations]);
+  }, []);
 
   const showCreate = () => {
     create === false ? setCreate(true) : setCreate(false);

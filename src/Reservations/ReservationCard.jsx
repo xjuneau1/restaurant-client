@@ -14,12 +14,12 @@ function ReservationCard({ reservation, guests, setError, error }) {
     birthday: "",
     company: "",
     waiter: "",
-    notes: ""
-  }
+    notes: "",
+  };
   const [cardInfo, setCardInfo] = useState(false);
   const [reservationData, setReservationData] = useState(reservation);
   const [guestData, setGuestData] = useState(initGuestData);
-  
+
   const fetchReservation = async () => {
     const abortController = new AbortController();
     try {
@@ -40,10 +40,10 @@ function ReservationCard({ reservation, guests, setError, error }) {
     const guest = guests.find(
       (guest) => guest.guest_id === reservation.guest_id
     );
-    
-    if(guest){
+
+    if (guest) {
       setGuestData(guest);
-      setTimeout(console.log(guestData), 5000)
+      setTimeout(console.log(guestData), 5000);
     }
     handleSetCard();
     fetchReservation();
@@ -97,7 +97,7 @@ function ReservationCard({ reservation, guests, setError, error }) {
     }
     return () => abortController.abort();
   };
-  
+
   return (
     <div className="reservation-container">
       {reservation.status === "booked" || reservation.status === "seated" ? (
@@ -160,24 +160,34 @@ function ReservationCard({ reservation, guests, setError, error }) {
         }
       >
         {cardInfo ? (
-          <div className="card-info">
-            {error ? <div>{error.message}</div> : <div></div>}
-            <div className="card-info-forms">
-              <ReservationForm
-                submitHandler={handleChangeReservation}
-                reservationData={reservationData}
-                setReservationData={setReservationData}
-                setError={setError}
-              />
-              <GuestsReservationForm setGuestData={setGuestData} guestData={guestData} />
+          <>
+            <div className="card-info-header">
+              <div className="card-info-header-title">{`Name: ${reservation.last_name}, ${reservation.first_name}`}</div>
+              <button className="card-info-close-btn" onClick={handleSetCard}>
+                Close
+              </button>
             </div>
-            <button onClick={handleSetCard}>Close Card</button>
+            <div className="card-info">
+              {error ? <div>{error.message}</div> : <div></div>}
+              <div className="card-info-forms">
+                <ReservationForm
+                  submitHandler={handleChangeReservation}
+                  reservationData={reservationData}
+                  setReservationData={setReservationData}
+                  setError={setError}
+                />
+                <GuestsReservationForm
+                  setGuestData={setGuestData}
+                  guestData={guestData}
+                />
+              </div>
 
-            <button onClick={handleCancelReservation} type="button">
-              {" "}
-              Cancel
-            </button>
-          </div>
+              <button className="card-info-cancel-btn" onClick={handleCancelReservation} type="button">
+                {" "}
+                Cancel Reservation
+              </button>
+            </div>
+          </>
         ) : (
           <div></div>
         )}

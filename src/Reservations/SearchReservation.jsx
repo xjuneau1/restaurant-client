@@ -14,6 +14,7 @@ function SearchReservation({ setReservations }) {
     const abortController = new AbortController();
     try {
       if (/\d/.test(search)) {
+        console.log(await listReservations({ mobile_number: search }, abortController.signal))
         setReservations(await listReservations({ mobile_number: search }, abortController.signal));
       } else {
         setReservations(await listReservations({ name: search }, abortController.signal));

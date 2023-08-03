@@ -31,11 +31,13 @@ function NewReservation({ setCreate }) {
     event.preventDefault();
     const abortController = new AbortController();
     try {
-      setGuestData({first_name: reservationData.first_name, last_name: reservationData.last_name})
+      setGuestData({...guestData, first_name: reservationData.first_name, last_name: reservationData.last_name})
+      console.log(guestData)
       await createReservation(reservationData, abortController.signal)
         .then(navigate("/reservations"))
         .then(setCreate(false))
         .then(setError(null));
+      
       await createGuest(guestData, abortController.signal)
     } catch (err) {
       setError(err);

@@ -103,8 +103,8 @@ function ReservationForm({
               required
             />
           </div>
-          <button className="" type="submit">
-                Submit{" "}
+          <button className="reservation-submit-button" type="submit">
+                Submit Changes{" "}
               </button>
           {/* 
             Email:

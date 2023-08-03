@@ -35,3 +35,17 @@
     border: none;
     padding: 5px;
 }
+
+.reservation-submit-button{
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgb(90, 200, 80);
+    color:white;
+    padding: 5px;
+    transition: 800ms;
+}
+.reservation-submit-button:hover{
+    border: 1px solid black;
+    background-color: rgb(80, 180, 80);
+    cursor: pointer;
+}

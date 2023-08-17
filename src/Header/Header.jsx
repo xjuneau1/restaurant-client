@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Menu from "./Menu";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import "./header.css";
+
 function Header() {
   const [menu, setMenu] = useState(false)
 
@@ -15,7 +18,7 @@ function Header() {
   return (
     <div className="header-container">
       <div className="modal-container">
-        <button onClick={showMenu}>Menu</button>
+        <button onClick={showMenu} className="menuButton"><FontAwesomeIcon icon={faBars} className="fa-2xl" /></button>
         <div className={menu ? "header-menu-container active" : "header-menu-container"}>
           {menu ? <Menu setMenu={setMenu} menu={menu}/> : <></>}
         </div>

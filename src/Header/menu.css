@@ -1,20 +1,25 @@
 .menu-container {
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 
 .menu-container > a {
     text-decoration: none;
-    border: 1px solid black;
-    border-radius: 5px;
+    color: black;
     background-color: white;
     font-size: 24px;
-    margin: 10px 10px 10px 10px;
-    padding: 5px;
+    margin: 10px;
     width: fit-content;
     align-self: flex-start;
     transition: 400ms;
 }
 .menu-container > a:hover {
-    transform: translateX(50px);
+    transform: translateX(5px);
+    color: rgb(78, 157, 200);
+}
+
+.menuBorderBottom{
+    border-bottom: 1px solid black;
+    margin: 0px 5px 0px 5px
 }

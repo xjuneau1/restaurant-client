@@ -33,13 +33,27 @@
     position: fixed;
     border-radius: 5px;
     margin: 10px;
-    width: 200px;
-    height: 200px;
+    width: fit-content;
+    height: fit-content;
     opacity: 0;
     transition: ease-in-out 500ms;
 }
 
 .header-menu-container.active {
     opacity: 1;
-    background-color: rgb(25, 25, 25);
+    background-color: white;
+    border: 1.5px solid black;
+}
+
+
+.menuButton{
+    padding: 3px 6px 3px 6px;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: ease-in-out 400ms;
+}
+
+.menuButton:hover{
+    cursor: pointer;
+    color:rgb(78, 157, 200);
 }
